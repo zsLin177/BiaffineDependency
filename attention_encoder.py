@@ -2,7 +2,6 @@ import torch
 import torch.nn as nn
 import numpy as np
 from Layers import EncoderLayer
-
 class PositionalEncoding(nn.Module):
 
     def __init__(self, d_hid, n_position=200):
@@ -41,7 +40,7 @@ class Attention_encoder(nn.Module):
     n_layers: num of layer of the encoder
     n_positions: max len of the sentence
 
-    borrow from https://github.com/jadore801120/attention-is-all-you-need-pytorch/blob/master/transformer
+    borrowed from Yu-Hsiang Huang's implementation
     '''
     def __init__(self,d_model=512,
                  n_head=8,
