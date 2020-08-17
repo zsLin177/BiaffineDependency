@@ -132,8 +132,7 @@ def train(WORD, CHAR, ARC, REL, transform,encoder,epoch=60,word_dim=100):
     puncts = torch.tensor([i for s, i in WORD.vocab.stoi.items() if ispunct(s)]).to(device)
 
     train, dev, test = get_dataset(transform)
-    # print(len(train.sentences))
-    train.sentences = train.sentences[:3]
+    # train.sentences = train.sentences[:30000]
     dev.sentences = dev.sentences[:200]
     test.sentences = test.sentences[:200]
     print('train sentences:%d dev sentences:%d test sentences:%d' % (
